@@ -1,0 +1,11 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "bracketSpacing": false,
+  "trailingComma": "all",
+  "proseWrap": "always",
+
+  "overrides": [
+    {"files": "*.spec.js", "options": {"printWidth": 120}}
+  ]
+}
