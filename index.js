@@ -6,13 +6,13 @@ module.exports = declare((api, opts) => {
 
   return {
     presets: [
-      [require('@babel/preset-env').default, {useBuiltIns: 'entry'}],
-      [require('@babel/preset-react').default, {useBuiltIns: true}],
+      [require('@babel/preset-env').default, {forceAllTransforms: true}],
+      require('@babel/preset-react').default,
     ],
     plugins: [
       [
         require('@babel/plugin-transform-runtime').default,
-        {useESModules: 'auto'},
+        {useESModules: 'auto', helpers: false},
       ],
       // https://github.com/facebook/create-react-app/issues/4263
       [
@@ -27,23 +27,14 @@ module.exports = declare((api, opts) => {
     env: {
       development: {
         presets: [
-          [
-            require('@babel/preset-react').default,
-            {development: true, useBuiltIns: true},
-          ],
+          [require('@babel/preset-react').default, {development: true}],
         ],
       },
 
       test: {
         presets: [
-          [
-            require('@babel/preset-env').default,
-            {targets: {node: 'current'}, useBuiltIns: 'entry'},
-          ],
-          [
-            require('@babel/preset-react').default,
-            {development: true, useBuiltIns: true},
-          ],
+          [require('@babel/preset-env').default, {targets: {node: 'current'}}],
+          [require('@babel/preset-react').default, {development: true}],
         ],
         plugins: [require('babel-plugin-transform-dynamic-import').default],
       },
