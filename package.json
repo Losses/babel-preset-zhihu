@@ -3,8 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "lint": "prettier --list-different \"./**/*.{js,json,md}\"",
-    "lint:fix": "prettier --write \"./**/*.{js,json,md}\"",
-    "precommit": "lint-staged"
+    "lint:fix": "prettier --write \"./**/*.{js,json,md}\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.{js,json,md}": [
@@ -25,7 +29,7 @@
   "devDependencies": {
     "@babel/core": "^7.1.0",
     "@babel/runtime": "^7.0.0",
-    "husky": "^0.14.3",
+    "husky": "^1.0.0",
     "lint-staged": "^7.3.0",
     "prettier": "^1.14.3"
   },
