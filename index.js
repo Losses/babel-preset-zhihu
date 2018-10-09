@@ -10,10 +10,9 @@ module.exports = declare((api, opts) => {
       require('@babel/preset-react').default,
     ],
     plugins: [
-      // TODO: enable helpers
       [
         require('@babel/plugin-transform-runtime').default,
-        {useESModules: 'auto', helpers: false},
+        {useESModules: 'auto'},
       ],
       // https://github.com/facebook/create-react-app/issues/4263
       [
