@@ -64,7 +64,8 @@ npm install --save-dev babel-jest babel-core@bridge
   "jest": {
     "transform": {
       "\\.js$": "babel-preset-zhihu/jest"
-    }
+    },
+    "transformIgnorePatterns": []
   }
 }
 ```
