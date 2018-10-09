@@ -4,8 +4,8 @@ const isDependency = filename => filename.indexOf('/node_modules/') !== -1
 
 const transformer = createTransformer()
 const dependenciesTransformer = createTransformer({
-  presets: [require.resolve('./dependencies')],
   configFile: false,
+  presets: [require.resolve('./dependencies')],
 })
 
 module.exports = {
