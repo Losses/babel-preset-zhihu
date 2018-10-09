@@ -21,7 +21,9 @@
     "transform": {
       "\\.js$": "./jest"
     },
-    "transformIgnorePatterns": []
+    "transformIgnorePatterns": [
+      "/node_modules/@babel/runtime/"
+    ]
   },
   "lint-staged": {
     "*.{js,json,md}": [

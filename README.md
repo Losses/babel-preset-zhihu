@@ -38,6 +38,7 @@ module.exports = {
             },
           },
           {
+            exclude: /@babel\/runtime/,
             loader: 'babel-loader',
             options: {
               cacheDirectory: true,
@@ -65,7 +66,7 @@ npm install --save-dev babel-jest babel-core@bridge
     "transform": {
       "\\.js$": "babel-preset-zhihu/jest"
     },
-    "transformIgnorePatterns": []
+    "transformIgnorePatterns": ["/node_modules/@babel/runtime/"]
   }
 }
 ```
