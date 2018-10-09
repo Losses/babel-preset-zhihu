@@ -1,6 +1,6 @@
 # babel-preset-zhihu
 
-```shell
+```sh
 npm install --save-dev babel-preset-zhihu @babel/core @babel/runtime core-js
 ```
 
@@ -18,6 +18,10 @@ import 'core-js/fn/object/assign'
 ```
 
 ## Webpack
+
+```sh
+npm install --save-dev babel-loader
+```
 
 ```js
 module.exports = {
@@ -50,6 +54,10 @@ module.exports = {
 ```
 
 ## Jest
+
+```sh
+npm install --save-dev babel-jest babel-core@bridge
+```
 
 ```json
 {
