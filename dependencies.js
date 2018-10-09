@@ -10,8 +10,14 @@ module.exports = declare((api, opts) => {
       [require('@babel/preset-env').default, {forceAllTransforms: true}],
     ],
     plugins: [
-      // TODO: enable helpers
-      [require('@babel/plugin-transform-runtime').default, {helpers: false}],
+      [
+        require('@babel/plugin-transform-runtime').default,
+        {
+          absoluteRuntime: path.dirname(
+            require.resolve('@babel/runtime/package.json'),
+          ),
+        },
+      ],
       require('@babel/plugin-syntax-dynamic-import').default,
       // https://github.com/babel/babel/issues/7215
       require('@babel/plugin-transform-destructuring').default,
