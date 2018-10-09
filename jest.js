@@ -6,6 +6,7 @@ const transformer = createTransformer()
 const dependenciesTransformer = createTransformer({
   configFile: false,
   presets: [require.resolve('./dependencies')],
+  compact: false,
 })
 
 module.exports = {
