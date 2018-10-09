@@ -1,11 +1,17 @@
 import {transform} from '@babel/core'
 
-test('transform', () => {
-  expect(
-    transform(`const fn = () => {}`, {
-      envName: 'development',
-      configFile: false,
-      presets: ['module:.'],
-    }).code,
-  ).toMatchSnapshot()
+describe('transform', () => {
+  const options = {
+    envName: 'development',
+    configFile: false,
+    presets: ['module:.'],
+  }
+
+  test('normal', () => {
+    expect(transform(`const fn = () => {}`, options).code).toMatchSnapshot()
+  })
+
+  test('inject runtime', () => {
+    expect(transform(`function* fn() {}`, options).code).toMatchSnapshot()
+  })
 })
