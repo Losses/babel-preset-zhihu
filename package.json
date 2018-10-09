@@ -3,12 +3,20 @@
   "version": "0.0.0",
   "scripts": {
     "lint": "prettier --list-different \"./**/*.{js,json,md}\"",
-    "lint:fix": "prettier --write \"./**/*.{js,json,md}\""
+    "lint:fix": "prettier --write \"./**/*.{js,json,md}\"",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "jest": {
+    "transform": {
+      "\\.js$": "./jest"
+    },
+    "transformIgnorePatterns": []
   },
   "lint-staged": {
     "*.{js,json,md}": [

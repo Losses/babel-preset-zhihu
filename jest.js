@@ -4,7 +4,7 @@ const isDependency = filename => filename.indexOf('/node_modules/') !== -1
 
 const transformer = createTransformer()
 const dependenciesTransformer = createTransformer({
-  presets: [require.resolve('babel-preset-react-app/dependencies')],
+  presets: [require.resolve('./dependencies')],
   configFile: false,
 })
 
