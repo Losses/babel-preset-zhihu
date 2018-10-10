@@ -1,7 +1,8 @@
 # babel-preset-zhihu
 
 ```sh
-npm install --save-dev babel-preset-zhihu @babel/core @babel/runtime core-js
+npm install --save-dev babel-preset-zhihu @babel/core
+npm install --save @babel/runtime core-js
 ```
 
 ```js
