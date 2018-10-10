@@ -1,21 +1,31 @@
 import {transform} from '@babel/core'
 
-describe('transform dependencies', () => {
-  const options = {
+describe('transform', () => {
+  const defaultOptions = {
     envName: 'development',
     configFile: false,
     presets: ['./dependencies'],
   }
 
+  const t = (code, options = {}) =>
+    transform(code, {...defaultOptions, ...options})
+      .code.split(process.cwd())
+      .join('<cwd>')
+
   test('normal', () => {
-    expect(transform(`const fn = () => {}`, options).code).toMatchSnapshot()
+    expect(t(`const fn = () => {}`)).toMatchSnapshot()
   })
 
   test('inject runtime', () => {
+    expect(t(`function* fn() {}`)).toMatchSnapshot()
+  })
+
+  test('compile modules', () => {
+    expect(t(`import React from 'react'`)).toMatchSnapshot()
     expect(
-      transform(`function* fn() {}`, options)
-        .code.split(process.cwd())
-        .join('<cwd>'),
+      t(`import React from 'react'`, {
+        caller: {name: 'test', supportsStaticESM: true},
+      }),
     ).toMatchSnapshot()
   })
 })

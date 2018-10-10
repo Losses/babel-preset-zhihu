@@ -1,11 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`transform compile modules 1`] = `
+"\\"use strict\\";
+
+var _interopRequireDefault = require(\\"<cwd>/node_modules/@babel/runtime/helpers/interopRequireDefault\\");
+
+var _react = _interopRequireDefault(require(\\"react\\"));"
+`;
+
+exports[`transform compile modules 2`] = `"import React from 'react';"`;
+
 exports[`transform inject runtime 1`] = `
 "\\"use strict\\";
 
-var _interopRequireDefault = require(\\"@babel/runtime/helpers/interopRequireDefault\\");
+var _interopRequireDefault = require(\\"<cwd>/node_modules/@babel/runtime/helpers/interopRequireDefault\\");
 
-var _regenerator = _interopRequireDefault(require(\\"@babel/runtime/regenerator\\"));
+var _regenerator = _interopRequireDefault(require(\\"<cwd>/node_modules/@babel/runtime/regenerator\\"));
 
 var _marked =
 /*#__PURE__*/

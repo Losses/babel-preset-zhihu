@@ -2,7 +2,9 @@
   "name": "babel-preset-zhihu",
   "version": "0.0.1",
   "files": [
+    "create.js",
     "index.js",
+    "library.js",
     "dependencies.js",
     "jest.js"
   ],

@@ -18,6 +18,15 @@ import 'core-js/fn/symbol'
 import 'core-js/fn/object/assign'
 ```
 
+## For Library
+
+```js
+// babel.config.js
+module.exports = {
+  presets: ['babel-preset-zhihu/library'],
+}
+```
+
 ## Webpack
 
 ```sh
