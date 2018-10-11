@@ -5,6 +5,7 @@ module.exports = declare((api, opts) => {
   api.assertVersion(7)
 
   return {
+    // https://github.com/webpack/webpack/issues/4039#issuecomment-419284940
     sourceType: 'unambiguous',
     presets: [
       [require('@babel/preset-env').default, {forceAllTransforms: true}],
