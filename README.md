@@ -18,6 +18,36 @@ import 'core-js/fn/symbol'
 import 'core-js/fn/object/assign'
 ```
 
+## Customize
+
+### Decorators
+
+```js
+// babel.config.js
+module.exports = {
+  presets: ['babel-preset-zhihu'],
+  plugins: [['@babel/plugin-proposal-decorators', {legacy: true}]],
+}
+```
+
+### TypeScript
+
+```js
+// babel.config.js
+module.exports = {
+  presets: ['babel-preset-zhihu', '@babel/preset-typescript'],
+}
+```
+
+### Flow
+
+```js
+// babel.config.js
+module.exports = {
+  presets: ['babel-preset-zhihu', '@babel/preset-flow'],
+}
+```
+
 ## For Library
 
 ```js
@@ -27,7 +57,7 @@ module.exports = {
 }
 ```
 
-## Webpack
+## Webpack Configure
 
 ```sh
 npm install --save-dev babel-loader
@@ -64,7 +94,7 @@ module.exports = {
 }
 ```
 
-## Jest
+## Jest Configure
 
 ```sh
 npm install --save-dev babel-jest babel-core@bridge
