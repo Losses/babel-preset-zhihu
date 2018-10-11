@@ -1,6 +1,6 @@
 {
   "name": "babel-preset-zhihu",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "files": [
     "create.js",
     "index.js",
