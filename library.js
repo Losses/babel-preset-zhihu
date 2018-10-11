@@ -1,3 +1,5 @@
 const create = require('./create')
 
-module.exports = create({absoluteRuntime: false})
+module.exports = create({
+  targets: {node: 'current'},
+})

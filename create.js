@@ -1,13 +1,17 @@
 const path = require('path')
 const {declare} = require('@babel/helper-plugin-utils')
 
-module.exports = ({absoluteRuntime = true} = {}) => {
+module.exports = ({
+  targets,
+  forceAllTransforms = false,
+  absoluteRuntime = false,
+} = {}) => {
   return declare((api, opts) => {
     api.assertVersion(7)
 
     return {
       presets: [
-        [require('@babel/preset-env').default, {forceAllTransforms: true}],
+        [require('@babel/preset-env').default, {targets, forceAllTransforms}],
         require('@babel/preset-react').default,
       ],
       plugins: [

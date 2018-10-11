@@ -17,7 +17,7 @@ describe('transform', () => {
   })
 
   test('inject runtime', () => {
-    expect(t(`function* fn() {}`)).toMatchSnapshot()
+    expect(t(`async function* fn() {}`)).toMatchSnapshot()
   })
 
   test('compile modules', () => {

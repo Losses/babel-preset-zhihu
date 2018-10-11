@@ -15,27 +15,22 @@ exports[`transform inject runtime 1`] = `
 
 var _interopRequireDefault = require(\\"@babel/runtime/helpers/interopRequireDefault\\");
 
-var _regenerator = _interopRequireDefault(require(\\"@babel/runtime/regenerator\\"));
+var _awaitAsyncGenerator2 = _interopRequireDefault(require(\\"@babel/runtime/helpers/awaitAsyncGenerator\\"));
 
-var _marked =
-/*#__PURE__*/
-_regenerator.default.mark(fn);
+var _wrapAsyncGenerator2 = _interopRequireDefault(require(\\"@babel/runtime/helpers/wrapAsyncGenerator\\"));
 
 function fn() {
-  return _regenerator.default.wrap(function fn$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-        case \\"end\\":
-          return _context.stop();
-      }
-    }
-  }, _marked, this);
+  return _fn.apply(this, arguments);
+}
+
+function _fn() {
+  _fn = (0, _wrapAsyncGenerator2.default)(function* () {});
+  return _fn.apply(this, arguments);
 }"
 `;
 
 exports[`transform normal 1`] = `
 "\\"use strict\\";
 
-var fn = function fn() {};"
+const fn = () => {};"
 `;
