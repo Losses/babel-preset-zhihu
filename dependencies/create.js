@@ -11,27 +11,22 @@ module.exports = ({
     api.assertVersion(7)
 
     return {
+      // https://github.com/webpack/webpack/issues/4039#issuecomment-419284940
+      sourceType: 'unambiguous',
       presets: [
         [
           require('@babel/preset-env').default,
           {targets, ignoreBrowserslistConfig, forceAllTransforms},
         ],
-        require('@babel/preset-react').default,
       ],
       plugins: [
         [
           require('@babel/plugin-transform-runtime').default,
           {
-            useESModules: 'auto',
             absoluteRuntime: absoluteRuntime
               ? path.dirname(require.resolve('@babel/runtime/package.json'))
               : false,
           },
-        ],
-        // https://github.com/facebook/create-react-app/issues/4263
-        [
-          require('@babel/plugin-proposal-class-properties').default,
-          {loose: true},
         ],
         require('@babel/plugin-syntax-dynamic-import').default,
         // https://github.com/babel/babel/issues/7215
@@ -39,19 +34,12 @@ module.exports = ({
       ],
 
       env: {
-        development: {
-          presets: [
-            [require('@babel/preset-react').default, {development: true}],
-          ],
-        },
-
         test: {
           presets: [
             [
               require('@babel/preset-env').default,
               {targets: {node: 'current'}, ignoreBrowserslistConfig: true},
             ],
-            [require('@babel/preset-react').default, {development: true}],
           ],
           plugins: [require('babel-plugin-transform-dynamic-import').default],
         },

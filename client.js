@@ -1,6 +1,6 @@
 const create = require('./create')
 
 module.exports = create({
-  targets: {node: 'current'},
-  ignoreBrowserslistConfig: true,
+  forceAllTransforms: true,
+  absoluteRuntime: true,
 })
