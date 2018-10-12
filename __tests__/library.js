@@ -4,7 +4,7 @@ describe('transform', () => {
   const defaultOptions = {
     envName: 'development',
     configFile: false,
-    presets: ['module:.'],
+    presets: ['./library'],
   }
 
   const t = (code, options = {}) =>

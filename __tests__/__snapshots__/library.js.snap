@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`transform compile modules 1`] = `
+"\\"use strict\\";
+
+var _interopRequireDefault = require(\\"@babel/runtime/helpers/interopRequireDefault\\");
+
+var _react = _interopRequireDefault(require(\\"react\\"));"
+`;
+
+exports[`transform compile modules 2`] = `"import React from 'react';"`;
+
+exports[`transform inject runtime 1`] = `
+"\\"use strict\\";
+
+var _interopRequireDefault = require(\\"@babel/runtime/helpers/interopRequireDefault\\");
+
+var _awaitAsyncGenerator2 = _interopRequireDefault(require(\\"@babel/runtime/helpers/awaitAsyncGenerator\\"));
+
+var _wrapAsyncGenerator2 = _interopRequireDefault(require(\\"@babel/runtime/helpers/wrapAsyncGenerator\\"));
+
+function fn() {
+  return _fn.apply(this, arguments);
+}
+
+function _fn() {
+  _fn = (0, _wrapAsyncGenerator2.default)(function* () {});
+  return _fn.apply(this, arguments);
+}"
+`;
+
+exports[`transform normal 1`] = `
+"\\"use strict\\";
+
+const fn = () => {};"
+`;
