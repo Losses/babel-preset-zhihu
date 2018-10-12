@@ -1,13 +1,6 @@
 {
   "name": "babel-preset-zhihu",
   "version": "0.0.4",
-  "files": [
-    "create.js",
-    "index.js",
-    "library.js",
-    "dependencies.js",
-    "jest.js"
-  ],
   "scripts": {
     "lint": "prettier --list-different \"./**/*.{js,json,md}\"",
     "lint:fix": "prettier --write \"./**/*.{js,json,md}\"",
